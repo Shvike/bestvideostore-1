@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bogdan</title>
+</head>
+<body>
+{{ name }}
+{{ d }}
+{{ arr }}
+<br>
+{% for i in arr %}
+    {% if i == 2 %}
+        <i>{{ i|add:1 }}</i><br>
+    {% else %}
+        <h1>{{ i|add:10 }}</h1><br>
+    {% endif %}
+{% endfor %}
+
+<h1>hello world from template!!@!!!!!!</h1>
+
+{% for video in content %}
+    <iframe width="956" height="538" src="{{ video.urls }}"></iframe>
+{% endfor %}
+</body>
+</html>
