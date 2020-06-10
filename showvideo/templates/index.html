@@ -1,17 +1,5 @@
 {% extends "main_template.html" %}
-{#{{ name }}#}
-{#{{ d }}#}
-{#{{ arr }}#}
-{#<br>#}
-{#{% for i in arr %}#}
-{#    {% if i == 2 %}#}
-{#        <i>{{ i|add:1 }}</i><br>#}
-{#    {% else %}#}
-{#        <h1>{{ i|add:10 }}</h1><br>#}
-{#    {% endif %}#}
-{#{% endfor %}#}
 
-{#<h1>hello world from template!!@!!!!!!</h1>#}
 {% block title %}all video{% endblock %}
 
 {% block video %}
@@ -32,12 +20,5 @@
     {% endfor %}
 
 {% include "test.html" with some_id=video.id %}
-{#    <form action="/hello/comment/{{ video.id }}/" method="get">#}
-{#        <div class="form-group">#}
-{#          <label for="comment">Comment:</label>#}
-{#          <textarea class="form-control" rows="5" name="com"></textarea>#}
-{#        </div>#}
-{#        <button type="submit" class="btn btn-outline-dark">Dark</button>#}
-{#    </form>#}
 {% endfor %}
 {% endblock %}
