@@ -1,8 +1,11 @@
 {% extends "main_template.html" %}
-
+{% load static %}
 {% block title %}all video{% endblock %}
+{% block links %}<script src="{% static "script.js" %}"></script>{% endblock %}
+
 
 {% block video %}
+<img src="{% static "123.jpg" %}">
 {% for video in content %}
     <iframe width="956" height="538" src="{{ video.urls }}"></iframe>
     <a href="/hello/one_video/{{ video.id }}/">
@@ -11,10 +14,13 @@
         </h4>
     </a>
     <h3>{{ video.date }}</h3>
-    <h3>Likes: {{ video.likes }}</h3>
+    <h3 class="like" id="{{ video.id }}">Likes: {{ video.likes }}</h3>
     <h5>{{ video.description }}</h5>
     {% for com in video.comment.all %}
-        <h5>{{ com.text }}</h5>
+        <button data-toggle="collapse" data-target="#demo{{ com.id }}">Collapsible</button>
+        <div id="demo{{ com.id }}" class="collapse">
+            <i>{{ com.text }}</i>
+        </div>
         <h6>{{ com.date }}</h6>
         <hr>
     {% endfor %}
