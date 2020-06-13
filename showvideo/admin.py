@@ -13,8 +13,6 @@ class VideoAdmin(admin.ModelAdmin):
     list_filter = ["likes", "date"]
     prepopulated_fields = {"slug":["title"]}
     search_fields = ["date"]
-    # filter_horizontal = ["date"]
-    # filter_vertical = ["date"]
 
 
 admin.site.register(Video, VideoAdmin)
