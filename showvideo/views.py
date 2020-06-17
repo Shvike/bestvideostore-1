@@ -6,6 +6,8 @@ from rest_framework.generics import (
     CreateAPIView,
     ListAPIView,
     RetrieveUpdateDestroyAPIView)
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication, SessionAuthentication
 
 
 class UpdateDestroyVideo(RetrieveUpdateDestroyAPIView):
@@ -14,11 +16,15 @@ class UpdateDestroyVideo(RetrieveUpdateDestroyAPIView):
 
 
 class VideoList(ListAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication, SessionAuthentication]
     serializer_class = VideoSerializer
     queryset = Video.objects.all()
 
 
 class CommentList(ListAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [SessionAuthentication]
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
 
