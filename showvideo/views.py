@@ -1,6 +1,30 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Video, Comment
+from showvideo.serializer import CommentSerializer, VideoSerializer
+from rest_framework.generics import (
+    CreateAPIView,
+    ListAPIView,
+    RetrieveUpdateDestroyAPIView)
+
+
+class UpdateDestroyVideo(RetrieveUpdateDestroyAPIView):
+    serializer_class = VideoSerializer
+    queryset = Video.objects.all()
+
+
+class VideoList(ListAPIView):
+    serializer_class = VideoSerializer
+    queryset = Video.objects.all()
+
+
+class CommentList(ListAPIView):
+    serializer_class = CommentSerializer
+    queryset = Comment.objects.all()
+
+
+class CreateVideo(CreateAPIView):
+    serializer_class = VideoSerializer
 
 
 def hello(request):
