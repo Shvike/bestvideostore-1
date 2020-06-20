@@ -1,7 +1,7 @@
 from django.urls import re_path
 from . import views
 
-# 456/
+
 urlpatterns = [
     re_path("123/", views.hello),
     re_path("456/", views.world, name="main_page"),
@@ -13,5 +13,6 @@ urlpatterns = [
     re_path("api/v1/commentlist/", views.CommentList.as_view()),
     re_path("api/v1/videocreate/", views.CreateVideo.as_view()),
     re_path("api/v1/videoupdate/(?P<pk>\d+)/", views.UpdateDestroyVideo.as_view()),
+    re_path("add_ajax_comment/", views.ajax_comment),
 
 ]

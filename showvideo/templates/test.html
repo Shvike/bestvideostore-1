@@ -1,9 +1,9 @@
-<form action={% url "add_comment" id=some_id %} method="post">
-    {% csrf_token %}
+<form>
+    {% csrf_token %}a
     <div class="form-group">
       <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="5" name="com"></textarea>
+      <textarea class="form-control" rows="5" name="com" id="textarea{{ some_id }}"></textarea>
       <input class="form-control" type="password" name="pwd">
     </div>
-    <button type="submit" class="btn btn-outline-dark">Dark</button>
+    <button type="button" class="btn btn-outline-dark" id="{{ some_id }}">Dark</button>
 </form>
