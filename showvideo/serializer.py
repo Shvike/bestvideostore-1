@@ -14,6 +14,9 @@ class VideoSerializerB(ModelSerializer):
         fields = ("urls", "title")# "__all__"
 
 
+        
+        
+        
 class CommentSerializer(ModelSerializer):
     comment_video = VideoSerializerB()
     class Meta:
