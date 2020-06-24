@@ -30,7 +30,7 @@ class Video(models.Model):       # A 1      B   2     C  3
 
     @property
     def tv(self):
-        return mark_safe(f"<iframe width='100' height='50' src=" + self.urls + "></iframe>")
+        return mark_safe("<iframe width='100' height='50' src=" + self.urls + "></iframe>")
 # url_a, ..... 1
 # url_b, ..... 2
 # url_c, ..... 3
