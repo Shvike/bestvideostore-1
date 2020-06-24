@@ -26,7 +26,7 @@ class Video(models.Model):       # A 1      B   2     C  3
 
     @property
     def test(self):
-        return f"hello {self.title}{self.likes ** 2}"
+        return self.title
 
     @property
     def tv(self):
