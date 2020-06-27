@@ -15,7 +15,7 @@ $("document").ready(function () {
             }
         )
     });
-
+py manage.py runserver
     $(".btn-outline-dark").on("click", function () {
         let id = $(this).attr("id");
         let val = $("#textarea" + id).val();
